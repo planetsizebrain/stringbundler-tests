@@ -1,0 +1,223 @@
+# JMH 1.4.2 (released 4 days ago)
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: be.aca.MyBenchmark.testStringBuffer
+
+# Run progress: 0.00% complete, ETA 00:01:30
+# Fork: 1 of 3
+# Warmup Iteration   1: 1421433.028 ops/s
+# Warmup Iteration   2: 1462252.024 ops/s
+# Warmup Iteration   3: 1315221.580 ops/s
+Iteration   1: 1748311.579 ops/s
+Iteration   2: 2779418.454 ops/s
+Iteration   3: 2825549.896 ops/s
+
+# Run progress: 6.67% complete, ETA 00:01:29
+# Fork: 2 of 3
+# Warmup Iteration   1: 1388084.785 ops/s
+# Warmup Iteration   2: 1406960.329 ops/s
+# Warmup Iteration   3: 1298470.243 ops/s
+Iteration   1: 1747956.738 ops/s
+Iteration   2: 2880353.551 ops/s
+Iteration   3: 2882489.053 ops/s
+
+# Run progress: 13.33% complete, ETA 00:01:22
+# Fork: 3 of 3
+# Warmup Iteration   1: 1391893.679 ops/s
+# Warmup Iteration   2: 1415364.119 ops/s
+# Warmup Iteration   3: 1313461.864 ops/s
+Iteration   1: 1805626.104 ops/s
+Iteration   2: 2826737.688 ops/s
+Iteration   3: 2847851.205 ops/s
+
+
+Result: 2482699.363 ±(99.9%) 903546.071 ops/s [Average]
+  Statistics: (min, avg, max) = (1747956.738, 2482699.363, 2882489.053), stdev = 537685.774
+  Confidence interval (99.9%): [1579153.292, 3386245.434]
+
+
+# JMH 1.4.2 (released 4 days ago)
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: be.aca.MyBenchmark.testStringBuilder
+
+# Run progress: 20.00% complete, ETA 00:01:16
+# Fork: 1 of 3
+# Warmup Iteration   1: 3332717.439 ops/s
+# Warmup Iteration   2: 3574139.381 ops/s
+# Warmup Iteration   3: 3923002.583 ops/s
+Iteration   1: 2076352.948 ops/s
+Iteration   2: 4269125.252 ops/s
+Iteration   3: 4703449.498 ops/s
+
+# Run progress: 26.67% complete, ETA 00:01:10
+# Fork: 2 of 3
+# Warmup Iteration   1: 3327814.451 ops/s
+# Warmup Iteration   2: 3669229.842 ops/s
+# Warmup Iteration   3: 4025688.546 ops/s
+Iteration   1: 4084902.580 ops/s
+Iteration   2: 3868836.638 ops/s
+Iteration   3: 4576179.537 ops/s
+
+# Run progress: 33.33% complete, ETA 00:01:04
+# Fork: 3 of 3
+# Warmup Iteration   1: 3213183.560 ops/s
+# Warmup Iteration   2: 3389791.731 ops/s
+# Warmup Iteration   3: 4863934.840 ops/s
+Iteration   1: 3389712.946 ops/s
+Iteration   2: 4309624.843 ops/s
+Iteration   3: 4716342.295 ops/s
+
+
+Result: 3999391.837 ±(99.9%) 1406648.624 ops/s [Average]
+  Statistics: (min, avg, max) = (2076352.948, 3999391.837, 4716342.295), stdev = 837074.034
+  Confidence interval (99.9%): [2592743.213, 5406040.462]
+
+
+# JMH 1.4.2 (released 4 days ago)
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: be.aca.MyBenchmark.testStringBundler
+
+# Run progress: 40.00% complete, ETA 00:00:58
+# Fork: 1 of 3
+# Warmup Iteration   1: 2046347.466 ops/s
+# Warmup Iteration   2: 2168771.786 ops/s
+# Warmup Iteration   3: 1762862.787 ops/s
+Iteration   1: 2537849.129 ops/s
+Iteration   2: 2565259.776 ops/s
+Iteration   3: 2606068.843 ops/s
+
+# Run progress: 46.67% complete, ETA 00:00:51
+# Fork: 2 of 3
+# Warmup Iteration   1: 2000756.314 ops/s
+# Warmup Iteration   2: 2146576.764 ops/s
+# Warmup Iteration   3: 1855192.823 ops/s
+Iteration   1: 2567495.066 ops/s
+Iteration   2: 2067809.946 ops/s
+Iteration   3: 2570910.835 ops/s
+
+# Run progress: 53.33% complete, ETA 00:00:45
+# Fork: 3 of 3
+# Warmup Iteration   1: 2019867.537 ops/s
+# Warmup Iteration   2: 2219163.731 ops/s
+# Warmup Iteration   3: 2145080.754 ops/s
+Iteration   1: 2592006.257 ops/s
+Iteration   2: 2572975.475 ops/s
+Iteration   3: 2576813.667 ops/s
+
+
+Result: 2517465.444 ±(99.9%) 285092.460 ops/s [Average]
+  Statistics: (min, avg, max) = (2067809.946, 2517465.444, 2606068.843), stdev = 169653.950
+  Confidence interval (99.9%): [2232372.983, 2802557.904]
+
+
+# JMH 1.4.2 (released 4 days ago)
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: be.aca.MyBenchmark.testStringConcat
+
+# Run progress: 60.00% complete, ETA 00:00:38
+# Fork: 1 of 3
+# Warmup Iteration   1: 259580935.042 ops/s
+# Warmup Iteration   2: 266405374.653 ops/s
+# Warmup Iteration   3: 296276036.844 ops/s
+Iteration   1: 302807717.202 ops/s
+Iteration   2: 301725951.836 ops/s
+Iteration   3: 293263995.570 ops/s
+
+# Run progress: 66.67% complete, ETA 00:00:32
+# Fork: 2 of 3
+# Warmup Iteration   1: 263691926.017 ops/s
+# Warmup Iteration   2: 264384429.193 ops/s
+# Warmup Iteration   3: 294462327.403 ops/s
+Iteration   1: 299967928.547 ops/s
+Iteration   2: 302953279.220 ops/s
+Iteration   3: 300586698.911 ops/s
+
+# Run progress: 73.33% complete, ETA 00:00:25
+# Fork: 3 of 3
+# Warmup Iteration   1: 261033436.090 ops/s
+# Warmup Iteration   2: 275906911.731 ops/s
+# Warmup Iteration   3: 291011384.735 ops/s
+Iteration   1: 305414408.298 ops/s
+Iteration   2: 301200942.184 ops/s
+Iteration   3: 300838131.984 ops/s
+
+
+Result: 300973228.195 ±(99.9%) 5580937.067 ops/s [Average]
+  Statistics: (min, avg, max) = (293263995.570, 300973228.195, 305414408.298), stdev = 3321126.130
+  Confidence interval (99.9%): [295392291.127, 306554165.262]
+
+
+# JMH 1.4.2 (released 4 days ago)
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/bin/java
+# VM options: <none>
+# Warmup: 3 iterations, 1 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: be.aca.MyBenchmark.testStringFormat
+
+# Run progress: 80.00% complete, ETA 00:00:19
+# Fork: 1 of 3
+# Warmup Iteration   1: 88252.674 ops/s
+# Warmup Iteration   2: 135827.561 ops/s
+# Warmup Iteration   3: 117720.817 ops/s
+Iteration   1: 146567.768 ops/s
+Iteration   2: 145125.644 ops/s
+Iteration   3: 140869.828 ops/s
+
+# Run progress: 86.67% complete, ETA 00:00:12
+# Fork: 2 of 3
+# Warmup Iteration   1: 89889.855 ops/s
+# Warmup Iteration   2: 131112.884 ops/s
+# Warmup Iteration   3: 119887.137 ops/s
+Iteration   1: 141796.365 ops/s
+Iteration   2: 144322.498 ops/s
+Iteration   3: 142587.441 ops/s
+
+# Run progress: 93.33% complete, ETA 00:00:06
+# Fork: 3 of 3
+# Warmup Iteration   1: 83672.067 ops/s
+# Warmup Iteration   2: 131824.838 ops/s
+# Warmup Iteration   3: 120540.257 ops/s
+Iteration   1: 143857.151 ops/s
+Iteration   2: 143683.551 ops/s
+Iteration   3: 144349.610 ops/s
+
+
+Result: 143684.428 ±(99.9%) 2908.192 ops/s [Average]
+  Statistics: (min, avg, max) = (140869.828, 143684.428, 146567.768), stdev = 1730.619
+  Confidence interval (99.9%): [140776.236, 146592.621]
+
+
+# Run complete. Total time: 00:01:35
+
+Benchmark                             Mode  Samples          Score         Error  Units
+b.a.MyBenchmark.testStringBuffer     thrpt        9    2482699.363 ±  903546.071  ops/s
+b.a.MyBenchmark.testStringBuilder    thrpt        9    3999391.837 ± 1406648.624  ops/s
+b.a.MyBenchmark.testStringBundler    thrpt        9    2517465.444 ±  285092.460  ops/s
+b.a.MyBenchmark.testStringConcat     thrpt        9  300973228.195 ± 5580937.067  ops/s
+b.a.MyBenchmark.testStringFormat     thrpt        9     143684.428 ±    2908.192  ops/s
