@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class StringBundlerBenchmark {
 
     private static final int NBR_OF_STRINGS = 100;
-    private static final int STRING_LENGTH = 15;
+    private static final int STRING_LENGTH = 20;
     private List<String> randomStrings = new ArrayList<String>(NBR_OF_STRINGS);
 
     @Param({"5", "10", "20", "30", "40", "50"})
@@ -112,7 +112,6 @@ public class StringBundlerBenchmark {
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(".*" + StringBundlerBenchmark.class.getSimpleName() + ".*")
-//                .param("arg", "41", "42") // Use this to selectively constrain/override parameters
                 .build();
 
         new Runner(opt).run();
