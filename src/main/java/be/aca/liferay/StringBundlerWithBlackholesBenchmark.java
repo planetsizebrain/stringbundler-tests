@@ -3,6 +3,7 @@ package be.aca.liferay;
 import com.liferay.portal.kernel.util.StringBundler;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openjdk.jmh.annotations.*;
+import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
@@ -15,16 +16,13 @@ import java.util.concurrent.TimeUnit;
 
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
-//@Warmup(iterations = 5, batchSize = 10000)
-//@Measurement(iterations = 5, batchSize = 10000)
 @Warmup(iterations = 25)
 @Measurement(iterations = 100)
 @Fork(1)
 @State(Scope.Benchmark)
-public class StringBundlerBenchmark {
+public class StringBundlerWithBlackholesBenchmark {
 
 	private static final int NBR_OF_STRINGS = 100;
-	private static final int STRING_LENGTH = 20;
 	private static final int MIN_STRING_LENGTH = 10;
 	private static final int MAX_STRING_LENGTH = 100;
 	private Random random = new Random();
@@ -37,102 +35,100 @@ public class StringBundlerBenchmark {
 	public void init() {
 		for (int i = 0; i < NBR_OF_STRINGS; i++) {
 			int randomLength = random.nextInt((MAX_STRING_LENGTH - MIN_STRING_LENGTH) + 1) + MIN_STRING_LENGTH;
-//			randomStrings.add(RandomStringUtils.randomAlphanumeric(STRING_LENGTH));
 			randomStrings.add(RandomStringUtils.randomAlphanumeric(randomLength));
 		}
 	}
 
 	@Benchmark
-	public String testStringConcat() {
+	public void testStringConcat(Blackhole bh) {
 		String s = "";
 		for (int i = 0; i < length; i++) {
 			s += randomStrings.get(i);
 		}
-		return s;
+
+		bh.consume(s);
 	}
 
 	@Benchmark
-	public String testStringBuilderWithInit() {
+	public void testStringBuilderWithInit(Blackhole bh) {
 		int builderLength = 0;
 		for (int i = 0; i < length; i++) {
 			builderLength += randomStrings.get(i).length();
 		}
 
-//		StringBuilder sb = new StringBuilder(length * STRING_LENGTH);
 		StringBuffer sb = new StringBuffer(builderLength);
 
 		for (int i = 0; i < length; i++) {
 			sb.append(randomStrings.get(i));
 		}
 
-		return sb.toString();
+		bh.consume(sb.toString());
 	}
 
 	@Benchmark
-	public String testStringBuilderWithoutInit() {
+	public void testStringBuilderWithoutInit(Blackhole bh) {
 		StringBuilder sb = new StringBuilder();
 
 		for (int i = 0; i < length; i++) {
 			sb.append(randomStrings.get(i));
 		}
 
-		return sb.toString();
+		bh.consume(sb.toString());
 	}
 
 	@Benchmark
-	public String testStringBufferWithInit() {
+	public void testStringBufferWithInit(Blackhole bh) {
 		int bufferLength = 0;
 		for (int i = 0; i < length; i++) {
 			bufferLength += randomStrings.get(i).length();
 		}
 
-//		StringBuffer sb = new StringBuffer(length * STRING_LENGTH);
 		StringBuffer sb = new StringBuffer(bufferLength);
 
 		for (int i = 0; i < length; i++) {
 			sb.append(randomStrings.get(i));
 		}
 
-		return sb.toString();
+		bh.consume(sb.toString());
 	}
 
 	@Benchmark
-	public String testStringBufferWithoutInit() {
+	public void testStringBufferWithoutInit(Blackhole bh) {
 		StringBuffer sb = new StringBuffer();
 
 		for (int i = 0; i < length; i++) {
 			sb.append(randomStrings.get(i));
 		}
 
-		return sb.toString();
+		bh.consume(sb.toString());
 	}
 
 	@Benchmark
-	public String testStringBundlerWithInit() {
+	public void testStringBundlerWithInit(Blackhole bh) {
 		StringBundler sb = new StringBundler(length);
 
 		for (int i = 0; i < length; i++) {
 			sb.append(randomStrings.get(i));
 		}
 
-		return sb.toString();
+		bh.consume(sb.toString());
 	}
 
 	@Benchmark
-	public String testStringBundlerWithoutInit() {
+	public void testStringBundlerWithoutInit(Blackhole bh) {
 		StringBundler sb = new StringBundler();
 
 		for (int i = 0; i < length; i++) {
 			sb.append(randomStrings.get(i));
 		}
 
-		return sb.toString();
+		bh.consume(sb.toString());
 	}
 
 	public static void main(String[] args) throws RunnerException {
 		Options opt = new OptionsBuilder()
-				.include(".*" + StringBundlerBenchmark.class.getSimpleName() + ".*")
-//				.jvmArgs("-prof gc")
+				.include(".*" + StringBundlerWithBlackholesBenchmark.class.getSimpleName() + ".*")
+				.jvmArgs("-prof perfnorm")
 				.build();
 
 		new Runner(opt).run();
